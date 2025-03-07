@@ -129,7 +129,7 @@ async function getAllProducts(reqQuery) {
         const sortDirection = sort === "price_high" ? -1 : 1;
         query = query.sort({ discountedPrice: sortDirection });
     }
-
+    
     const totalProducts = await Product.countDocuments(query);
     const skip = (pageNumber - 1) * pageSize;
 
